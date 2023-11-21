@@ -1,0 +1,55 @@
+@startuml
+abstract class Score{
+#score: int
+#isActive: boolean
+__
++{static}Score()
++{static}Score(int)
++equals(Obj): boolean
++putMoney(int)
++getMoney(int)
++getScore(): int
++setScore(int)
++getActive(): boolean
++setActive(boolean)
++{abstract}closeScore()
++{abstract}getInfo()
+}
+class SeleryScoreScore extends Score{
+--
++{static}SeleryScore(int)
++closeScore()
++getInfo()
+}
+class DepositScore extends Score{
+-percentage: float
+-dateStart: Date
+--
++{static}SeleryScore(int)
++closeScore()
++getInfo()
++getDateStart(): Date
++setDateStart(Date)
++getPercentage(): float
++setPercentage(float)
+}
+class CreditScore extends Score{
+-loan: int
+-percentage: float
+-dateStart: Date
+-dateEnd: Date
+--
++{static}CreditScore(int, float, Date)
++closeScore()
++getInfo()
++getLoan(): int
++setLoan(int)
++getDateStart(): Date
++setDateStart(Date)
++getDateEnd(): Date
++setDateEnd(Date)
++getPercentage(): float
++setPercentage(float)
+}
+@enduml
+
